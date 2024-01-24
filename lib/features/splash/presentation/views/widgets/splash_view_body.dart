@@ -1,6 +1,12 @@
+import 'package:bookly_clean_arich/constants.dart';
 import 'package:bookly_clean_arich/core/utiltes/asset_data.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../../../../home/presentation/view/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -16,18 +22,24 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   void initState() {
-    animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+    initeSlidingInimation();
     super.initState();
-    animationSliding = Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
-        .animate(animationController);
-    animationController.forward();
-    animationSliding.addListener(() {
-      setState(() {
-
-      });
+    Future.delayed(Duration(seconds: 2), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fade, duration: kTransitionDuration);
     });
   }
+
+  void initeSlidingInimation() {
+    animationController =
+        AnimationController(vsync: this, duration: Duration(seconds: 2));
+
+    animationSliding =
+        Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
+            .animate(animationController);
+    animationController.forward();
+  }
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -43,11 +55,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         Image.asset(AssetsData.logo),
         AnimatedBuilder(
-          builder: (context,_) {
+          builder: (context, _) {
             return SlideTransition(
               position: animationSliding,
-                child:  Text("Free Books"));
-          }, animation: animationSliding,
+              child: const Text("Free Books"),
+            );
+          },
+          animation: animationSliding,
         ),
       ],
     );
