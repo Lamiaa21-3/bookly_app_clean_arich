@@ -1,5 +1,6 @@
 
 import 'package:bookly_clean_arich/core/utiltes/asset_data.dart';
+import 'package:bookly_clean_arich/features/home/presentation/view/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -17,17 +18,4 @@ class HomeView extends StatelessWidget {
     );
   }
 }
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.asset(AssetsData.logo),
-        IconButton(onPressed: (){}, icon: const Icon(Icons.search),),
-      ],
-    );
-
-  }
-}
