@@ -11,6 +11,7 @@ class FeatureListBook extends StatelessWidget {
       child: ListView.builder(
 
         scrollDirection: Axis.horizontal,
+
         itemCount: 20,
           itemBuilder: (context,index){
 
