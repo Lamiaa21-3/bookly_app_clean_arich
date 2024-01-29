@@ -1,9 +1,9 @@
 import 'package:bookly_clean_arich/core/utiltes/asset_data.dart';
+import 'package:bookly_clean_arich/core/utiltes/styles_data.dart';
 import 'package:flutter/material.dart';
 
-
 class BestSellerListViewIetm extends StatelessWidget {
-  const BestSellerListViewIetm ({Key? key}) : super(key: key);
+  const BestSellerListViewIetm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +12,17 @@ class BestSellerListViewIetm extends StatelessWidget {
       child: Row(
         children: [
           Image.asset(AssetsData.test),
+           Column(
+            children: [
+              SizedBox(
+                width : MediaQuery.sizeOf(context).width * 0.5,
+                  child: const Text(
+                "Harry Potter And The Goblet Of Fire",
+                maxLines: 2,
+                style: Styles.textStyle20,
+              )),
+            ],
+          ),
         ],
       ),
     );

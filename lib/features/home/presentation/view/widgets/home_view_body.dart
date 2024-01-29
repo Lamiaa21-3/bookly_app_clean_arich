@@ -15,7 +15,7 @@ class HomeViewBody extends StatelessWidget {
       children: [
         CustomAppBar(),
         FeatureListBook(),
-        Text('Best Seller',style: Styles.titleMedium,),
+        Text('Best Seller',),
         BestSellerListViewIetm(),
       ],
     );
