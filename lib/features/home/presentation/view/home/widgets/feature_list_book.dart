@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 
-import 'custom_list_view_ietm.dart';
+import '../../../../../../core/utiltes/custom_book_logo.dart';
 
 class FeatureListBook extends StatelessWidget {
   const FeatureListBook({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class FeatureListBook extends StatelessWidget {
         itemCount: 20,
           itemBuilder: (context,index){
 
-        return const CustomListViewIetm();
+        return const CustomBookLogo();
 
       }),
     );

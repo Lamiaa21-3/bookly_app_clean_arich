@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../../core/utiltes/custom_book_logo.dart';
 import 'custom_book_details_appbar.dart';
 
 class BookDetailsBody extends StatelessWidget {
@@ -7,10 +8,15 @@ class BookDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+   var  width = MediaQuery.of(context).size.width;
+    return   SafeArea(
       child: Column(
         children: [
           CustomBookDetailsAppbar(),
+          Padding(
+            padding: EdgeInsets.only(left: width * .4,right: width * .2),
+            child: CustomBookLogo(),
+          ),
         ],
       ),
     );
