@@ -3,8 +3,8 @@ import 'package:bookly_clean_arich/core/utiltes/asset_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:go_router/go_router.dart';
+
 
 import '../../../../home/presentation/view/home_view.dart';
 
@@ -25,8 +25,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
     initeSlidingInimation();
     super.initState();
     Future.delayed(Duration(seconds: 2), () {
-      Get.to(() => const HomeView(),
-          transition: Transition.fade, duration: kTransitionDuration);
+      GoRouter.of(context).push('/homeView');
+      // Get.to(() => const HomeView(),
+      //     transition: Transition.fade, duration: kTransitionDuration);
     });
   }
 
