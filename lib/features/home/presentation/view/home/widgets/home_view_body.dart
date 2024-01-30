@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utiltes/styles_data.dart';
+
 import 'best_seller_list_view_ietm.dart';
 import 'custom_appbar.dart';
 import 'custom_list_view.dart';
@@ -11,7 +11,7 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child:  Padding(
