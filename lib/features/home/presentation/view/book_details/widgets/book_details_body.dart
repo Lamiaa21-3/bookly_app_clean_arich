@@ -1,3 +1,6 @@
+import 'package:bookly_clean_arich/core/utiltes/book_rating.dart';
+import 'package:bookly_clean_arich/core/utiltes/styles_data.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utiltes/custom_book_logo.dart';
@@ -8,18 +11,34 @@ class BookDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   var  width = MediaQuery.of(context).size.width;
-    return   SafeArea(
+    var width = MediaQuery.of(context).size.width;
+    return SafeArea(
       child: Column(
+
         children: [
-          CustomBookDetailsAppbar(),
+          const CustomBookDetailsAppbar(),
           Padding(
-            padding: EdgeInsets.only(left: width * .4,right: width * .2),
-            child: CustomBookLogo(),
+            padding: EdgeInsets.only(left: width * .4, right: width * .2),
+            child: const CustomBookLogo(),
           ),
+          Text(
+            'The Jungle Book ',
+            style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(
+            height: 6,
+          ),
+          Text(
+            'Rudyard Kipling ',
+            style: Styles.textStyle18.copyWith(fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 150),
+            child: BookRating(),
+          ),
+
         ],
       ),
     );
   }
 }
-

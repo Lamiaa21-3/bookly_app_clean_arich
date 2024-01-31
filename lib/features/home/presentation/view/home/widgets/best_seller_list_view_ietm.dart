@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 
 
 import '../../../../../../constants.dart';
-import 'book_rating.dart';
+import '../../../../../../core/utiltes/book_rating.dart';
 
 class BestSellerListViewIetm extends StatelessWidget {
   const BestSellerListViewIetm({Key? key}) : super(key: key);
