@@ -1,5 +1,6 @@
 import 'package:bookly_clean_arich/core/utiltes/book_rating.dart';
 import 'package:bookly_clean_arich/core/utiltes/styles_data.dart';
+import 'package:bookly_clean_arich/features/home/presentation/view/book_details/widgets/book_text_button_reaction.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,7 @@ class BookDetailsBody extends StatelessWidget {
             padding: EdgeInsets.only(left: 150),
             child: BookRating(),
           ),
+          BookButtonReaction(),
 
         ],
       ),
