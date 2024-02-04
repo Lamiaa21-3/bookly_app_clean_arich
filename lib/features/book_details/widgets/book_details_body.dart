@@ -1,11 +1,11 @@
 import 'package:bookly_clean_arich/core/utiltes/book_rating.dart';
 import 'package:bookly_clean_arich/core/utiltes/styles_data.dart';
-import 'package:bookly_clean_arich/features/home/presentation/view/book_details/widgets/book_text_button_reaction.dart';
-import 'package:bookly_clean_arich/features/home/presentation/view/home/widgets/best_seller_list_view_ietm.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utiltes/custom_book_logo.dart';
+import 'book_text_button_reaction.dart';
 import 'custom_book_details_appbar.dart';
 import 'custom_list_view_details.dart';
 

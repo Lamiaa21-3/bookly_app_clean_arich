@@ -1,9 +1,11 @@
-import 'package:bookly_clean_arich/features/home/presentation/view/book_details/book_details_view.dart';
-import 'package:bookly_clean_arich/features/home/presentation/view/home/home_view.dart';
-import 'package:bookly_clean_arich/features/home/presentation/view/search/search_view.dart';
+
+
 import 'package:go_router/go_router.dart';
 
-import '../../features/home/presentation/view/splash/splash_view.dart';
+import '../../features/book_details/book_details_view.dart';
+import '../../features/home/pres/home_view.dart';
+import '../../features/search/search_view.dart';
+import '../../features/splash/splash_view.dart';
 
 abstract class AppRouters {
   static const kSplashView = '/';
