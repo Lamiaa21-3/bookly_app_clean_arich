@@ -25,7 +25,7 @@ class BookButtonReaction extends StatelessWidget {
                   bottomRight: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
-                backGroundColor: Color(0xffEF8262),
+                backGroundColor: Color(0xffef8262),
                 textColor: Colors.white,
                 text: 'Free Previous'),
           ),

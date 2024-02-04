@@ -7,7 +7,7 @@ class CustomBookLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.6/3,
+      aspectRatio: 2.4/3.2,
       child: Container(
 
         decoration: const BoxDecoration(
