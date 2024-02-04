@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/utiltes/custom_book_logo.dart';
 import 'custom_book_details_appbar.dart';
+import 'custom_list_view_details.dart';
 
 class BookDetailsBody extends StatelessWidget {
   const BookDetailsBody({Key? key}) : super(key: key);
@@ -46,29 +47,10 @@ class BookDetailsBody extends StatelessWidget {
               alignment: Alignment.centerLeft,
                 child: Text('you can also like',style: Styles.textStyle16,)),
           ),
-          CustomeListViewDetails(),
+          const CustomeListViewDetails(),
         ],
       ),
     );
   }
 }
-class CustomeListViewDetails extends StatelessWidget {
-  const CustomeListViewDetails({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.15,
-      child: ListView.builder(
-
-          scrollDirection: Axis.horizontal,
-
-          itemCount: 20,
-          itemBuilder: (context,index){
-
-            return const CustomBookLogo();
-
-          }),
-    );
-  }
-}
