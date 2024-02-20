@@ -34,6 +34,7 @@ class HomeRemoteDataSourceImplem extends HomeRemoteDataSource {
     var data = await apiService.get(
         endPoint: 'volumes?Filtering=free-ebooks&q=programming');
     List<BookEntity> books = getBooksList(data);
+    saveBooksData(books,kNewestBox);
     return books;
   }
 

@@ -10,10 +10,13 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'constants.dart';
 
 
-void main() {
-  runApp(const BooklyApp());
+void main() async{
+  await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
-  Hive.openBox(kFeaturedBox);
+  await Hive.openBox(kFeaturedBox);
+  await Hive.openBox(kNewestBox);
+  runApp(const BooklyApp());
+
 }
 
 class BooklyApp extends StatelessWidget {
