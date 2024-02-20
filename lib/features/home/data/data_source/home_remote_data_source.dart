@@ -1,6 +1,10 @@
+import 'package:bookly_clean_arich/constants.dart';
 import 'package:bookly_clean_arich/core/utiltes/api_service.dart';
 import 'package:bookly_clean_arich/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_clean_arich/features/home/domain/entities/book_entity.dart';
+import 'package:hive/hive.dart';
+
+import '../../../../core/utiltes/functions/save_books_data.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFutureBooks();
@@ -18,8 +22,11 @@ class HomeRemoteDataSourceImplem extends HomeRemoteDataSource {
     var data = await apiService.get(
         endPoint: 'volumes?Filtering=free-ebooks&q=programming');
     List<BookEntity> books = getBooksList(data);
+    saveBooksData(books,kFeaturedBox);
     return books;
   }
+
+
 
 
   @override
