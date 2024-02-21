@@ -3,7 +3,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../../features/book_details/book_details_view.dart';
-import '../../features/home/pres/home_view.dart';
+import '../../features/home/pres/views/home_view.dart';
 import '../../features/search/search_view.dart';
 import '../../features/splash/splash_view.dart';
 

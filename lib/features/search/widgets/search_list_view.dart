@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../home/pres/widgets/best_seller_list_view_ietm.dart';
+import '../../home/pres/views/widgets/best_seller_list_view_ietm.dart';
+
+
 
 
 class SearchListView extends StatelessWidget {
