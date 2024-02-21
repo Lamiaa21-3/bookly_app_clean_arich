@@ -7,6 +7,7 @@ import 'package:bookly_clean_arich/features/home/data/data_source/home_remote_da
 import 'package:bookly_clean_arich/features/home/domain/entities/book_entity.dart';
 import 'package:bookly_clean_arich/features/home/domain/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl extends HomeRepo{
   final HomeLocalDataSource homeLocalDataSource;
@@ -26,8 +27,14 @@ class HomeRepoImpl extends HomeRepo{
     }
     catch(e)
     {
-      return left(Failure());
+      if( e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      else {
+        return left(ServerFailure(e.toString()));
+      }
     }
+    
 
   }
 
@@ -46,7 +53,7 @@ class HomeRepoImpl extends HomeRepo{
     }
     catch(e)
     {
-      return left(Failure());
+      return left(ServerFailure(e.toString()));
     }
   }
 
