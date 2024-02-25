@@ -1,5 +1,6 @@
 import 'package:bookly_clean_arich/core/utiltes/api_service.dart';
 import 'package:bookly_clean_arich/core/utiltes/app_routers.dart';
+import 'package:bookly_clean_arich/core/utiltes/simple_bloc_observer.dart';
 import 'package:bookly_clean_arich/features/home/data/data_source/home_local_data_source.dart';
 import 'package:bookly_clean_arich/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:bookly_clean_arich/features/home/data/repoistories/home_repo_implen.dart';
@@ -26,6 +27,7 @@ void main() async {
   setupServiceLocator();
   await Hive.openBox(kFeaturedBox);
   await Hive.openBox(kNewestBox);
+  Bloc.observer = SimpleBlocObserver();
   runApp(const BooklyApp());
 }
 
