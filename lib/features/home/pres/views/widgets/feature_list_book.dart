@@ -1,12 +1,14 @@
 
 
+import 'package:bookly_clean_arich/features/home/domain/entities/book_entity.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../../../../core/utiltes/custom_book_logo.dart';
 
 class FeatureListBook extends StatelessWidget {
-  const FeatureListBook({Key? key}) : super(key: key);
-
+  const FeatureListBook({Key? key, required this.books}) : super(key: key);
+ final List<BookEntity> books;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -15,10 +17,10 @@ class FeatureListBook extends StatelessWidget {
 
         scrollDirection: Axis.horizontal,
 
-        itemCount: 20,
+        itemCount: books.length,
           itemBuilder: (context,index){
 
-        return const CustomBookLogo();
+        return Image.asset('assests/assets/Logo.png');
 
       }),
     );

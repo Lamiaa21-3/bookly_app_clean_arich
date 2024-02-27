@@ -21,12 +21,12 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'constants.dart';
 import 'core/utiltes/functions/setup_service_locator.dart';
 
-void main() async {
+  Future <void> main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
   setupServiceLocator();
-  await Hive.openBox(kFeaturedBox);
-  await Hive.openBox(kNewestBox);
+  await Hive.openBox<BookEntity>(kFeaturedBox);
+  await Hive.openBox<BookEntity>(kNewestBox);
   Bloc.observer = SimpleBlocObserver();
   runApp(const BooklyApp());
 }
@@ -38,16 +38,18 @@ class BooklyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (
+        BlocProvider(
+          create: (
           context,
         ) {
           return FeaturedBookCubit(
             FetchFeatureUseCase(
              getIt.get<HomeRepoImpl>(),
             ),
-          );
+          )..fetchFeatureBook();
         },),
-        BlocProvider(create: (
+        BlocProvider(
+          create: (
             context,
             ) {
           return NewestBookCubit(

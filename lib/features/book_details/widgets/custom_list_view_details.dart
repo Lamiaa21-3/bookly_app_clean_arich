@@ -16,7 +16,7 @@ class CustomeListViewDetails extends StatelessWidget {
           itemCount: 20,
           itemBuilder: (context,index){
 
-            return const CustomBookLogo();
+            return const CustomBookLogo(image: '',);
 
           }),
     );

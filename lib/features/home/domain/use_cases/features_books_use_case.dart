@@ -5,14 +5,16 @@ import 'package:dartz/dartz.dart';
 import '../../../../core/errores/failure.dart';
 import '../entities/book_entity.dart';
 
-class FetchFeatureUseCase  extends UseCase<List<BookEntity>,NoParam>{
+class FetchFeatureUseCase  extends UseCase<List<BookEntity>,int>{
     final HomeRepo homeRepo;
 
   FetchFeatureUseCase(this.homeRepo);
 
   @override
-  Future<Either<Failure, List<BookEntity>>> call([NoParam? param]) async{
-    return await homeRepo.fetchFutureBooks();
+  Future<Either<Failure, List<BookEntity>>> call([int  pageNumber =0]) async{
+    return await homeRepo.fetchFutureBooks(
+      pageNumber: pageNumber,
+    );
     throw UnimplementedError();
   }
 

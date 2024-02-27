@@ -1,3 +1,5 @@
+
+
 import '../../../domain/entities/book_entity.dart';
 import 'access_info.dart';
 import 'sale_info.dart';
@@ -26,10 +28,10 @@ class BookModel extends BookEntity {
   }) : super(
             bookId: id!,
             image: volumeInfo?.imageLinks?.thumbnail ?? '',
-            autherName: volumeInfo?.authors?.first ?? ' No Name',
+      autherName: volumeInfo?.authors?.first ?? 'No Name',
             price: 0.0,
-            rating: volumeInfo!.averageRating!,
-            title: volumeInfo!.title!);
+            rating: volumeInfo!.averageRating,
+            title: volumeInfo.title!);
 
   factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,

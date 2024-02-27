@@ -7,7 +7,7 @@ import 'package:hive/hive.dart';
 import '../../../../core/utiltes/functions/save_books_data.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<BookEntity>> fetchFutureBooks();
+  Future<List<BookEntity>> fetchFutureBooks({int pageNumber = 0});
 
   Future<List<BookEntity>> fetchNewsFutureBooks();
 }
@@ -18,9 +18,9 @@ class HomeRemoteDataSourceImplem extends HomeRemoteDataSource {
   HomeRemoteDataSourceImplem(this.apiService);
 
   @override
-  Future<List<BookEntity>> fetchFutureBooks() async {
+  Future<List<BookEntity>> fetchFutureBooks({int pageNumber = 0}) async {
     var data = await apiService.get(
-        endPoint: 'volumes?Filtering=free-ebooks&q=programming');
+        endPoint: 'volumes?Filtering=free-ebooks&q=programming&startIndex=${pageNumber * 10}');
     List<BookEntity> books = getBooksList(data);
     saveBooksData(books,kFeaturedBox);
     return books;

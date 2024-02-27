@@ -22,7 +22,7 @@ class BookDetailsBody extends StatelessWidget {
           const CustomBookDetailsAppbar(),
           Padding(
             padding: EdgeInsets.only(left: width * .4, right: width * .2),
-            child: const CustomBookLogo(),
+            child: const CustomBookLogo(image: '',),
           ),
           Text(
             'The Jungle Book ',
